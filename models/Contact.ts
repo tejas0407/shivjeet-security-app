@@ -6,6 +6,12 @@ const ContactSchema = new mongoose.Schema(
     email: String,
     phone: String,
     message: String,
+
+    status: {
+      type: String,
+      enum: ["New", "Contacted", "Closed"],
+      default: "New",
+    },
   },
   {
     timestamps: true,

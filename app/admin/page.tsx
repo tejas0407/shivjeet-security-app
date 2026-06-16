@@ -18,20 +18,28 @@ export default async function AdminPage() {
       <table className="w-full border">
         <thead>
           <tr className="bg-gray-200 text-black">
-            <th className="p-3 border">Name</th>
-            <th className="p-3 border">Email</th>
-            <th className="p-3 border">Phone</th>
-            <th className="p-3 border">Message</th>
-          </tr>
+  <th className="p-3 border">Name</th>
+  <th className="p-3 border">Email</th>
+  <th className="p-3 border">Phone</th>
+  <th className="p-3 border">Status</th>
+  <th className="p-3 border">Message</th>
+</tr>
         </thead>
 
         <tbody>
           {leads.map((lead: any) => (
             <tr key={lead._id}>
               <td className="border p-3">{lead.name}</td>
-              <td className="border p-3">{lead.email}</td>
-              <td className="border p-3">{lead.phone}</td>
-              <td className="border p-3">{lead.message}</td>
+<td className="border p-3">{lead.email}</td>
+<td className="border p-3">{lead.phone}</td>
+
+<td className="border p-3">
+  <span className="bg-yellow-200 text-black px-2 py-1 rounded">
+    {lead.status}
+  </span>
+</td>
+
+<td className="border p-3">{lead.message}</td>
             </tr>
           ))}
         </tbody>
